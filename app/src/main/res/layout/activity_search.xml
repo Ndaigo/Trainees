@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/upLayout"
+        android:layout_width="0dp"
+        android:layout_height="82dp"
+        android:background="@drawable/flame_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/underLayout"
+        android:layout_width="393dp"
+        android:layout_height="69dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/homebutton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/homebutton"
+            app:srcCompat="@drawable/home" />
+
+        <ImageButton
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:contentDescription="@string/search"
+            app:srcCompat="@android:drawable/ic_search_category_default" />
+
+        <ImageView
+            android:id="@+id/menyu"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/menyu"
+            app:srcCompat="@drawable/menyu" />
+
+        <ImageView
+            android:id="@+id/mypage"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/mypage"
+            app:srcCompat="@drawable/humanicon" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
