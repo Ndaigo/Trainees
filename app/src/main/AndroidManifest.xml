@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+    package="com.example.Trainees">
 
     <uses-permission android:name="android.permission.INTERNET " />
 
@@ -11,15 +11,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".set_Profile"></activity>
-        <activity android:name=".addToukou" />
-        <activity android:name=".Toukou" />
-        <activity android:name=".Mypage" />
-        <activity android:name=".menyu" />
+        <activity android:name=".Profile.Change_ProfileActivity" />
+        <activity android:name=".SetteiActivity" />
+        <activity android:name=".Menu.Change_TrainingActivity" />
+        <activity android:name=".Menu.Change_MenuActivity" />
+        <activity android:name=".Menu.Details_TrainingActivity" />
+        <activity android:name=".Menu.Start_MenuActivity" />
+        <activity android:name=".Menu.Add_TrainingActivity" />
+        <activity android:name=".Menu.Add_MenuActivity" />
+        <activity android:name=".Menu.TrainingActivity" />
+        <activity android:name=".Profile.Others_pageActivity" />
+        <activity android:name=".Toukou.My_ToukouActivity" />
+        <activity android:name=".Toukou.Comment.Add_CommentActivity" />
+        <activity android:name=".Login.Set_ProfileActivity" />
+        <activity android:name=".Toukou.Add_ToukouActivity" />
+        <activity android:name=".Toukou.Others_ToukouActivity" />
+        <activity android:name=".Profile.MypageActivity" />
+        <activity android:name=".Menu.MenuActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".login.newLoginActivity" />
+        <activity android:name=".Login.LoginActivity" />
+        <activity android:name=".Login.NewLoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
