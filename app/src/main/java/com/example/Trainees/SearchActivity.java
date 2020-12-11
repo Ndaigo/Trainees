@@ -90,63 +90,38 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
                 nottoukoutext.setVisibility(View.GONE);
                 if(!strsearch.equals("")){
-                    switch (tablayout.getSelectedTabPosition()){
-                        case 0:
-                            db.collection("Toukou").orderBy("time", Query.Direction.DESCENDING)
-                                    .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                            if(task.isSuccessful()){
-                                                for (QueryDocumentSnapshot document : task.getResult()) {
-                                                    ToukouData toukou = document.toObject(ToukouData.class);
+                    db.collection("Toukou").orderBy("time", Query.Direction.DESCENDING)
+                            .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if(task.isSuccessful()){
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    ToukouData toukou = document.toObject(ToukouData.class);
 
-                                                    text = (String)document.get("title");
-                                                    if(text.contains(strsearch)){
-                                                        mCustomAdapter.add(toukou);
-                                                        toukouid.add(document.getId());
-                                                    }
-                                                }
-                                                if(toukouid.size() == 0) {
-                                                    nottoukoutext.setVisibility(View.VISIBLE);
-                                                    nottoukoutext.setText(str2);
-                                                }
-                                                mCustomAdapter.notifyDataSetChanged();
-                                            }else{
-                                                Toast.makeText(SearchActivity.this, "Error Getting task list.", Toast.LENGTH_SHORT).show();
-                                            }
-                                        }
-                                    });
+                                    switch (tablayout.getSelectedTabPosition()){
+                                        case 0:
+                                            text = (String)document.get("title");
+                                            break;
+                                        case 1:
+                                            text = (String)document.get("menu");
+                                            break;
+                                    }
 
-                            break;
-
-                        case 1:
-                            db.collection("Toukou").orderBy("time", Query.Direction.DESCENDING)
-                                    .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                        if(task.isSuccessful()){
-                                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                                ToukouData toukou = document.toObject(ToukouData.class);
-                                                text = (String)document.get("menu");
-                                                if(text.contains(strsearch)){
-                                                    mCustomAdapter.add(toukou);
-                                                    toukouid.add(document.getId());
-                                                }
-                                            }
-                                            if(toukouid.size() == 0) {
-                                                nottoukoutext.setVisibility(View.VISIBLE);
-                                                nottoukoutext.setText(str2);
-                                            }
-
-                                        mCustomAdapter.notifyDataSetChanged();
-                                    }else{
-                                        Toast.makeText(SearchActivity.this, "Error Getting task list.", Toast.LENGTH_SHORT).show();
+                                    if(text.contains(strsearch)){
+                                        mCustomAdapter.add(toukou);
+                                        toukouid.add(document.getId());
                                     }
                                 }
-                            });
-                            break;
-                    }
-
+                                if(toukouid.size() == 0) {
+                                    nottoukoutext.setVisibility(View.VISIBLE);
+                                    nottoukoutext.setText(str2);
+                                }
+                                mCustomAdapter.notifyDataSetChanged();
+                            }else{
+                                Toast.makeText(SearchActivity.this, "Error Getting task list.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }else {
                     nottoukoutext.setVisibility(View.VISIBLE);
                     nottoukoutext.setText(str1);
