@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/underLayout"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <ImageButton
+        android:id="@+id/homeBT"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:contentDescription="@string/homeBT"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/homeicon" />
+
+    <ImageButton
+        android:id="@+id/searchBT"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:contentDescription="@string/searchBT"
+        app:srcCompat="@drawable/searchicon"
+        android:scaleType="fitCenter"/>
+
+    <ImageButton
+        android:id="@+id/menuBT"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:contentDescription="@string/menuBT"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/menuicon" />
+
+    <ImageButton
+        android:id="@+id/mypageBT"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:contentDescription="@string/mypageBT"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/mypageicon" />
+</LinearLayout>
