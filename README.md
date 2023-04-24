@@ -1,0 +1,3 @@
+# Trainees
+筋トレメニューを管理し、投稿出来るAndroidアプリのコードです
+データベースにはfirebase、開発自体はAndroidstudioを使用
